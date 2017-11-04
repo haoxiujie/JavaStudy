@@ -14,6 +14,7 @@ public class Factor {
 //		factor = factor * i;
 //		i = i+1;
 //		}
+		
 		for( int i=1; i<=n; i++)
 		{
 			factor = factor * i;
