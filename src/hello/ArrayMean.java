@@ -6,22 +6,19 @@ public class ArrayMean {
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner (System.in);
-		int x;
-		int[] numbers = new int[100];
 		double sum = 0;
 		int cnt = 0;
-		x = in.nextInt();
-		while (x != -1)
+		cnt = in.nextInt();
+		if (cnt>0)
 		{
-			numbers[cnt] = x;
-			sum += x;
-			cnt ++;
-			x = in.nextInt();
-		}
-		if ( cnt >0 )
-		{
+			int[] numbers = new int[cnt];
+			for(int i = 0;i<numbers.length; i++)
+			{
+				numbers[i] = in.nextInt();
+				sum += numbers[i];
+			}
 			double average = sum/cnt;
-			for (int i=0; i<cnt; i++)
+			for (int i=0; i<numbers.length; i++)
 			{
 				if ( numbers[i] > average)
 				{
