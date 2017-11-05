@@ -3,7 +3,12 @@ package _homework05_1;
 import java.util.Scanner;
 
 public class Main {
-
+	//这道题要考虑四种情况，就是题目中的用例1234
+	//第一种情况是输出的结果第一个不能有+号
+	//第二种情况是 0 0 0 0的情况，应当输出0
+	//第三种情况是有可能系数为1的，应当显示为x而不是1x
+	//第四种情况是有可能系数为-1的，应当显示为-x而不是-1x
+	
 	public static void main(String[] args) {
 		Scanner in = new Scanner (System.in);
 		int[]a = new int [101];
