@@ -10,13 +10,12 @@ public class Str {
 //		System.out.println(s);
 //		System.out.println(s.equals("bye"));
 		
-//		String s1 = "abc";
-//		String s2 = "abcd";
-//		System.out.println(s1.compareTo(s2));
+		String s1 = "C";
+		System.out.println(Integer.parseInt(s1,16));
 		
-		String name = "0123456789ºº×Ö";
+//		String name = "0123456789ºº×Ö";
 //		System.out.println(name.length());
-		System.out.println(name.substring(2,4));
+//		System.out.println(name.substring(2,4));
 //		for( int i=0; i<name.length();i++)
 //		{
 //			System.out.println(name.charAt(i));

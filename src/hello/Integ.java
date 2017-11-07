@@ -2,7 +2,7 @@ package hello;
 
 import java.util.Scanner;
 
-public class Integer {
+public class Integ {
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
