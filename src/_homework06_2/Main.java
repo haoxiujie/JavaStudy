@@ -34,7 +34,7 @@ public class Main {
 		}
 		//将utc时间换成北京时间
 		int BJT; //BJT=UTC+800
-		if(utctime>200000)
+		if(utctime>=160000)
 		{
 			utctime -= 240000;
 		}
@@ -50,7 +50,22 @@ public class Main {
 		{
 			System.out.print(h);
 		}
-		System.out.print(":"+m+":"+s);
+		if(m<10) 
+		{
+			System.out.print(":0"+m);
+		}
+		else
+		{
+			System.out.print(":"+m);
+		}
+		if(s<10) 
+		{
+			System.out.print(":0"+s);
+		}
+		else
+		{
+			System.out.print(":"+s);
+		}
 		in.close();
 	}
 
