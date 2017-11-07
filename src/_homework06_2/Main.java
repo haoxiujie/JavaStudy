@@ -10,7 +10,7 @@ public class Main {
 		int utctime = 0;
 		while(!NMEA.equals("END"))//如果不是最后一行的话
 		{
-			if(NMEA.startsWith("$GPRMC"))//如果是指定语句，则操作
+			if(NMEA.startsWith("$GPRMC") )//如果是指定语句，则操作
 			{
 				String s = NMEA.substring(1, NMEA.indexOf("*"));
 				//↑得到从1号位置(去除$)到第"*"所在的位置之前(不含)的字符串s
@@ -24,7 +24,7 @@ public class Main {
 				syh = Integer.toHexString(yh);
 				//上面获取了校验值，下面获取语句中的校验值
 				String jy = NMEA.substring(NMEA.indexOf("*")+1);	//得到从n号位置到末尾的全部内容
-				if(jy.equals(syh))//如果值相等
+				if(jy.equals(syh) && (NMEA.indexOf(",V,")==-1))//如果值相等
 				{
 					String stime = NMEA.substring(7,13);
 					utctime = Integer.parseInt(stime);
