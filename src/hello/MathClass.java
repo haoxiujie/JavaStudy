@@ -1,12 +1,8 @@
 package hello;
 
-import java.util.Scanner;
-
 public class MathClass {
 
-	public static void main(String[] args) {
-		Scanner in = new Scanner (System.in);
-		
+	public static void main(String[] args) {		
 		//Math类
 		//abs 绝对值
 		//pow 幂次
