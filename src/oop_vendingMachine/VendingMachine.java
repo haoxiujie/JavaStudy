@@ -36,6 +36,10 @@ public class VendingMachine {
 		vm.insertMoney(100);
 		vm.getFood();
 		vm.showBalance();
+		VendingMachine vm1 = new VendingMachine();
+		vm1.insertMoney(200);
+		vm.showBalance();
+		vm1.showBalance();
 	}
 
 }
