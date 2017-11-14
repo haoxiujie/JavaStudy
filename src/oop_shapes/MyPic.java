@@ -1,4 +1,4 @@
-package shapes;
+package oop_shapes;
 
 public class MyPic {
 	public static void main(String[] args) 

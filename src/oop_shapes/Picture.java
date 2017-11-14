@@ -1,4 +1,4 @@
-package shapes;
+package oop_shapes;
 
 import java.awt.Graphics;
 import java.util.ArrayList;
