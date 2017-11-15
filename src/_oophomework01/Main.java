@@ -20,8 +20,8 @@ public class Main {
 }
 
 class Fraction {
-	int a;
-	int b;
+	private int a;
+	private int b;
 	
 	Fraction(int a ,int b)
 	{	//构造一个a/b的分数。

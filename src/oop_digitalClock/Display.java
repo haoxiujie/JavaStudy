@@ -1,14 +1,18 @@
 package oop_digitalClock;
 
 public class Display {
+//	private 私有的 用于成员变量和成员函数前面
+//	说明这个成员是这个类私有的，只有在这个类内部才能访问它。(即这个类的大括号里面。)
 	private int value = 0;//（当前）值
 	private int limit = 0;//上限
 	
+//	public 公开的 任何人都可以访问
+//	构造函数应该是public的
 	public Display(int limit) {
 		this.limit = limit;
 	}
 	
-	public void increase() {
+	void increase() {
 		value++;
 		if ( value == limit ) {
 			value = 0;
