@@ -59,6 +59,12 @@ class Clock{
 	
 	public void tick() {
 		s.increase();
+		if( s.getValue() == 0 ) {
+			m.increase();
+			if( m.getValue() == 0 ) {	
+				h.increase();
+			}
+		}
 	}
 	
 	public String toString() {
