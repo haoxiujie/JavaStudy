@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class NoteBook {
 	private ArrayList<String> notes = new ArrayList<String>();
 	//容器类有两个类型:容器的类型<元素的类型>
-	//ArrayList类(范型类，是一种顺序容器，会自动顺序排列，删除一个自动向前移动角标，可以导出为数组。)
+	//ArrayList类(范型类，是一种顺序容器 ，会自动顺序排列，删除一个自动向前移动角标，可以导出为数组。)
 	
 	public void add(String s) {
 		//添加笔记
