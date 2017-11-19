@@ -1,6 +1,7 @@
 package oop_notebook;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class NoteBook {
 	private ArrayList<String> notes = new ArrayList<String>();
@@ -46,6 +47,9 @@ public class NoteBook {
 		return a;
 	}
 
+	public String toString() {
+		return "其中有"+notes.size()+"个元素";
+	}
 	public static void main(String[] args) {
 		NoteBook nb = new NoteBook();
 		nb.add("first");
@@ -60,6 +64,16 @@ public class NoteBook {
 		for( String s : a ) {
 			System.out.println(s);
 		}
+		System.out.println(nb);
+		HashSet<String> s = new HashSet<String>();
+		s.add("2");
+		s.add("6");
+		s.add("2");
+		s.add("5");
+//		for ( String k : s ) {
+//			System.out.println(k);
+//		}
+		System.out.println(s);
 	}
 
 }
