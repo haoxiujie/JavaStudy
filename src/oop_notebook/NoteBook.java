@@ -65,6 +65,7 @@ public class NoteBook {
 			System.out.println(s);
 		}
 		System.out.println(nb);
+		
 		HashSet<String> s = new HashSet<String>();
 		s.add("2");
 		s.add("6");
