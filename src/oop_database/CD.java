@@ -8,6 +8,7 @@ public class CD extends Item{
 	private boolean gotIt = false;//存在标志
 	private String comment;//备注
 	
+	
 	public CD(String title, String artist, int numofTracks, int playingTime, String comment) {
 //		super();
 		this.title = title;
