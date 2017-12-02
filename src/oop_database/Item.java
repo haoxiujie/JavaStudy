@@ -21,7 +21,7 @@ public class Item {
 
 
 	public void print() {
-		
+		System.out.print(title);
 	}
 
 

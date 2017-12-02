@@ -9,8 +9,16 @@ public class DVD extends Item{
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		DVD dvd = new DVD("da","db",1,"..");
+		dvd.print();
 
+	}
+	
+	public void print( ) {
+		System.out.print("DVD:");
+		super.print();
+		//调用父类的print();要用super.print();
+		System.out.println(":"+director);
 	}
 
 }
