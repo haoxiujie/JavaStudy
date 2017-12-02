@@ -1,30 +1,26 @@
 package oop_database;
 
 public class CD extends Item{
-	private String title;//标题
 	private String artist;//艺术家
-	private int numofTracks;//音轨数量
-	private int playingTime;//播放时间
-	private boolean gotIt = false;//存在标志
-	private String comment;//备注
+	private int numofTracks;//音轨数量				<-②
 	
 	
-	public CD(String title, String artist, int numofTracks, int playingTime, String comment) {
-//		super();
-		this.title = title;
+	public CD(String title, String areist, int nomofTracks, int playingTime, String comment) {
+		super(title, playingTime, false, comment);//接收父类传过来的构造。<-①
+		//子类必须有super(),没有这个的话就隐含认为有super()->不带参数的构造器;	
+		//注意此时构造函数的顺序：
+		//先做了①接收父类的构造,再②进行自己的定义初始化,才来做③进自己的构造函数。
 		this.artist = artist;
-		this.numofTracks = numofTracks;
-		this.playingTime = playingTime;
-		this.comment = comment;
+		this.numofTracks = numofTracks;//			<-③
 	}
-
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 	}
 
 	public void print() {
-		System.out.println(title+":"+artist);
+//		System.out.println(title+":"+artist);
 		
 	}
 
