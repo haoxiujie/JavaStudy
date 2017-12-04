@@ -20,6 +20,7 @@ public class Database {
 		Database db = new Database();
 		db.add(new CD("abc", "abct", 4, 60 , "..."));
 		db.add(new CD("def", "deft", 4, 60 , "..."));
+		db.add(new DVD("xxx", "aaa", 60, "..."));
 		db.list();
 	}
 
