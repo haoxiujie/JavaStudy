@@ -20,6 +20,13 @@ public class Item {
 	}
 
 
+	@Override
+	public String toString() {
+		return "Item [title=" + title + ", playingTime=" + playingTime + ", gotIt=" + gotIt + ", comment=" + comment
+				+ "]";
+	}
+
+
 	public void print() {
 		System.out.print(title);
 	}

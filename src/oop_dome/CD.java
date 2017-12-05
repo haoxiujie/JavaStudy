@@ -5,7 +5,7 @@ public class CD extends Item{
 	private int numofTracks;//音轨数量				<-②
 	
 	
-	public CD(String title, String areist, int nomofTracks, int playingTime, String comment) {
+	public CD(String title, String artist, int numofTracks, int playingTime, String comment) {
 		super(title, playingTime, false, comment);//接收父类传过来的构造。<-①
 		//子类必须有super(),没有这个的话就隐含认为有super()->不带参数的构造器;	
 		//注意此时构造函数的顺序：
@@ -14,14 +14,17 @@ public class CD extends Item{
 		this.numofTracks = numofTracks;//			<-③
 	}
 	
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 	public void print() {
 //		System.out.println(title+":"+artist);
-		
+		System.out.print("CD:");
+		super.print();
+		//调用父类的print();要用super.print();
+		System.out.println(":"+artist+" "+numofTracks);		
 	}
 
 }

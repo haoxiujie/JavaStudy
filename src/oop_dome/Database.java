@@ -13,6 +13,7 @@ public class Database {
 	public void list() {
 		for (Item item : listItem ) {
 			item.print();
+			System.out.println();
 		}
 		
 	}
@@ -21,6 +22,7 @@ public class Database {
 		db.add(new CD("abc", "abct", 4, 60 , "..."));
 		db.add(new CD("def", "deft", 4, 60 , "..."));
 		db.add(new DVD("xxx", "aaa", 60, "..."));
+		db.add(new VideoGame("ddd", 10, true, "...", 4));
 		db.list();
 	}
 
