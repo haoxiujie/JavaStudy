@@ -5,7 +5,6 @@ package oop_castle;
 //3.可扩展性
 //4.框架加数据
 //5.类型系统
-
 import java.util.Scanner;
 
 public class Game {
