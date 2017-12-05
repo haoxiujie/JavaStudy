@@ -55,20 +55,7 @@ public class Game {
 
     private void goRoom(String direction) 
     {//函数：去房间，传来的值是方向
-        Room nextRoom = null;//先将准备进入的房间名初始化
-        //
-        if(direction.equals("north")) {
-            nextRoom = currentRoom.northExit;
-        }
-        if(direction.equals("east")) {
-            nextRoom = currentRoom.eastExit;
-        }
-        if(direction.equals("south")) {
-            nextRoom = currentRoom.southExit;
-        }
-        if(direction.equals("west")) {
-            nextRoom = currentRoom.westExit;
-        }
+        Room nextRoom = currentRoom.getExit(direction);//先将准备进入的房间名初始化
         //如果输入的内容和方向一致，则进入房间或被赋值null
 
         if (nextRoom == null) {
@@ -84,14 +71,7 @@ public class Game {
     public void showPrompt() {
     	System.out.println("你在" + currentRoom);
         System.out.print("出口有: ");
-        if(currentRoom.northExit != null)
-            System.out.print("north ");
-        if(currentRoom.eastExit != null)
-            System.out.print("east ");
-        if(currentRoom.southExit != null)
-            System.out.print("south ");
-        if(currentRoom.westExit != null)
-            System.out.print("west ");
+        System.out.print(currentRoom.getExitDesc());
         //如果输入的方向有房间，则输出方向
         System.out.println();
     }
