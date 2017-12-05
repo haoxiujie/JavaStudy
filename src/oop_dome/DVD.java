@@ -1,4 +1,4 @@
-package oop_DoME;
+package oop_dome;
 
 public class DVD extends Item{
 	private String director;//Ó°Æ¬µ¼ÑÝ

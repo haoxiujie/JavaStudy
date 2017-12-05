@@ -1,4 +1,4 @@
-package oop_DoME;
+package oop_dome;
 
 public class Item {
 //	protected String title;//БъЬт

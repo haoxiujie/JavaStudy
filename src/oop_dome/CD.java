@@ -1,4 +1,4 @@
-package oop_DoME;
+package oop_dome;
 
 public class CD extends Item{
 	private String artist;//“’ ıº“
