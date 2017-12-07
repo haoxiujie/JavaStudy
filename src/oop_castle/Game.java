@@ -1,17 +1,22 @@
 package oop_castle;
+import java.util.Scanner;
+import java.util.HashMap;
 //设计原则(目标)(要考虑的东西)：
 //1.消除代码复制
 //2.封装
 //3.可扩展性
 //4.框架加数据
 //5.类型系统
-import java.util.Scanner;
 
 public class Game {
     private Room currentRoom;//当前房间
+    private HashMap<String, Handler> handlers = new HashMap<String, Handler>();
         
     public Game() 
     {
+    	handlers.put("go", new HandlerGo(this));
+    	handlers.put("bye", new HandlerBye(this));
+    	handlers.put("help", new HandlerHelp(this));
         createRooms();//进入房间函数
     }
 
@@ -27,11 +32,16 @@ public class Game {
         bedroom = new Room("卧室");
         
         //	初始化房间的出口
-        outside.setExits(null, lobby, study, pub);
-        lobby.setExits(null, null, null, outside);
-        pub.setExits(null, outside, null, null);
-        study.setExits(outside, bedroom, null, null);
-        bedroom.setExits(null, null, null, study);
+        outside.setExit("east", lobby);
+        outside.setExit("south", study);
+        outside.setExit("west", pub);
+        lobby.setExit("west", outside);
+        pub.setExit("east", outside);
+        study.setExit("north", outside);
+        study.setExit("east",bedroom);
+        bedroom.setExit("west", study);
+        bedroom.setExit("up", pub);
+        pub.setExit("down", lobby);
         //描述各个房间的出口信息，分别是Room类的北，东，南，西方向
         currentRoom = outside;  //	从城堡门外开始
     }
@@ -46,14 +56,7 @@ public class Game {
     }
 
     // 以下为用户命令
-
-    private void printHelp() 
-    {
-        System.out.print("迷路了吗？你可以做的命令有：go bye help");
-        System.out.println("如：\tgo east");
-    }
-
-    private void goRoom(String direction) 
+    public void goRoom(String direction) 
     {//函数：去房间，传来的值是方向
         Room nextRoom = currentRoom.getExit(direction);//先将准备进入的房间名初始化
         //如果输入的内容和方向一致，则进入房间或被赋值null
@@ -76,27 +79,48 @@ public class Game {
         System.out.println();
     }
     
+    public void play() {
+    	Scanner in = new Scanner(System.in);
+    	while ( true ) {
+    		String line = in.nextLine();
+    		//获取一整行字符
+    		String[] words = line.split(" ");
+    		//将获取的整行字符按每词一个单位(空格)分离成words[]
+    		Handler handler = handlers.get(words[0]);
+    		//hanler = 第一个单词 如go help bye 对应的value
+    		String value = "";
+    		//创建一个空的字符串在下面用来赋值第二个单词，如方向
+    		if ( words.length>1 )
+    			value = words[1];
+    		if (handler != null ) {
+    		//如果第一个单词不为空
+    			handler.doCmd(value);
+    			//将第一个单词进行.doCmd(第二个单词)
+    			if(handler.isBye()) {
+    			//如果第一个单词是bye,则bye的值是HandlerBye对象
+    			//则handler是HandlerBye对象，进入子类    				
+    				break;
+    			}
+    		}
+//↑String.split->将一个字符串按“”中的内容分割为子字符串，然后将结果作为字符串数组返回。
+//    		if ( words[0].equals("help") ) {
+//    			printHelp();
+//    		} else if (words[0].equals("go") ) {
+//    			goRoom(words[1]);
+//    		} else if ( words[0].equals("bye") ) {
+//    			break;
+//    		}
+    	}
+    	in.close();
+    }
+    
 	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
 		Game game = new Game();
 		game.printWelcome();
 		//开始游戏
-        while ( true ) {
-        		String line = in.nextLine();
-        		//获取一整行字符
-        		String[] words = line.split(" ");
-//↑String.split->将一个字符串按“”中的内容分割为子字符串，然后将结果作为字符串数组返回。
-        		if ( words[0].equals("help") ) {
-        			game.printHelp();
-        		} else if (words[0].equals("go") ) {
-        			game.goRoom(words[1]);
-        		} else if ( words[0].equals("bye") ) {
-        			break;
-        		}
-        }
+        game.play();
         
         System.out.println("感谢您的光临。再见！");
-        in.close();
 	}
 
 }
