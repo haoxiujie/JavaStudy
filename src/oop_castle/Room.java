@@ -11,7 +11,7 @@ public class Room {
     }
 
     public void setExit(String dir, Room room) {
-    	exits.put(description, room);
+    	exits.put(dir, room);
     }
     
     @Override
@@ -33,7 +33,7 @@ public class Room {
     
     public Room getExit( String direction) {
     	//根据d返回什么东西
-    	return exits.get(description);
+    	return exits.get(direction);
     }
     
 }
